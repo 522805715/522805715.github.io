@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        	* {
+			margin: 0;
+			padding: 0
+		}
+        ul,ol,li{
+			list-style: none;
+
+        }
+
+		ul {
+			transform-style: preserve-3d;
+			width: 400px;
+			height: 400px;
+			position: relative;
+			margin: 200px 200px;
+            animation: xx 15s infinite linear;
+			
+		}
+
+		ul:hover {
+            /* animation-play-state 属性规定动画正在运行还是暂停。 */
+			animation-play-state: paused;
+		}
+
+		li {
+			position: absolute;
+			left: 0;
+			top: 0;
+			width: 200px;
+			height: 200px;
+			background: pink;
+			opacity: 0.7;
+            border: pink 1px solid;
+		}
+
+		li:hover {
+			opacity: 1;
+		}
+
+		img {
+			width: 200px;
+			height: 200px;
+		}
+
+		.top {
+			transform: rotateX(90deg) translateZ(100px);
+		}
+
+		.bottom {
+			transform: rotateX(90deg) translateZ(-100px);
+		}
+
+		.left {
+			transform: rotateY(90deg) translateZ(100px);
+		}
+
+		.right {
+			transform: rotateY(90deg) translateZ(-100px);
+		}
+
+		.front {
+			transform: translateZ(100px);
+		}
+
+		.back {
+			transform: translateZ(-100px);
+		}
+
+		@keyframes xx {
+			form {
+				transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+			}
+
+			to {
+				transform: rotateX(360deg) rotateY(720deg) rotateZ(1080deg);
+			}
+		}
+    </style>
+</head>
+<body>
+    <ul>
+		<li class="top"><img src="./lp2.png" alt=""></li>
+		<li class="bottom"><img src="./2.jpg" alt=""></li>
+		<li class="left"><img src="./chouzhu.jpg" alt=""></li>
+
+		<li class="right"><img src="./QQ图片20210720172702.jpg" alt=""></li>
+		<li class="front"><img src="./20190404225110244.png" alt=""></li>
+		<li class="back"><img src="./微信图片_20210430111741.jpg" alt=""></li>
+	</ul>
+
+    <script>
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        ul,
+        ol,
+        li {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .box {
+            width: 700px;
+            /* height: 380px; */
+            margin: 150px auto;
+            box-shadow: 0 0 40px rgb(0 0 0 / 80%);
+            border-radius: 10px;
+            background: pink;
+            position: relative;
+            /* box-sizing: border-box; */
+        }
+
+        .box-left {
+            float: left;
+            width: 500px;
+            height: 380px;
+            overflow: hidden;
+            border-radius: 10px;
+            box-sizing: border-box;
+
+            background:yellow;
+            box-shadow: 0 0 40px rgb(0 0 0 / 80%);
+
+
+
+
+        }
+
+        .box-left .top {
+            width: 500px;
+            height: 150px;
+            /* border: 1px rgb(39, 38, 37) solid; */
+            position: relative;
+            background: rgb(221, 162, 162);
+            box-sizing: border-box;
+
+
+        }
+
+        .box-left .top .pic img {
+            width: 100px;
+            height: 100px;
+            overflow: hidden;
+            border-radius: 50%;
+            position: absolute;
+            top: 20px;
+            left: 20px;
+        }
+
+        .box-left .top .tex {
+            width: 300px;
+            height: 150px;
+            position: absolute;
+            left: 23%;
+        }
+
+        .box-left .top .tex .name {
+            width: 300px;
+            font-size: 30px;
+            color: #636163;
+            text-align: center;
+            margin-bottom: 0px;
+        }
+
+        .box-left .top .tex .singer {
+            width: 300px;
+            color: #636163;
+            text-align: center;
+        }
+
+        .box-left .top .tb ul {
+            float: right;
+            margin-right: 20px;
+            margin-top: 40px;
+        }
+
+        .box-left .top .tb li {
+            width: 30px;
+            height: 30px;
+            text-align: center;
+        }
+
+        .box-left .top .tb img {
+            width: 18px;
+
+        }
+        .box-left .top .tb img:hover{
+            filter: brightness(3.2);
+
+        }
+
+        .box-left .top .progress {
+            overflow: hidden;
+            position: absolute;
+            bottom: -15px;
+            left: 0;
+
+            width: 100%;
+            height: 5px;
+            background-color: black;
+            position: relative;
+
+        }
+
+        .box-left .top .progress input {
+            width: 100%;
+            outline: none;
+            border: none;
+            margin: 0;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            height: 10px;
+            opacity: 0;
+            z-index: 9;
+        }
+
+        .box-left .top .progress .x {
+            width: 0%;
+            height: 4px;
+            display: block;
+            background-color: #ED553B;
+        }
+
+        .box-left .time {
+            width: 500px;
+            height: 100px;
+            color: #666666;
+            font-size: 52px;
+            list-style: 100px;
+            text-align: center;
+            padding: 15px 0 0px
+        }
+
+        .box-left .playing {
+            width: 100%;
+            height: 72px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-evenly;
+        }
+
+
+
+        .box-left .playing li {
+            display: flex;
+            height: 40px;
+            text-align: center;
+            line-height: 40px;
+
+
+        }
+
+        .box-left .playing li img {
+            height: 40px;
+        }
+
+        .box-left .playing li:hover{
+            filter: brightness(2.2);
+            /* background: #666666; */
+
+        }
+
+        .box-left .volume {
+            width: 300px;
+            height: 1.5px;
+            background: #FFFFFF;
+            /* border-radius: 50%; */
+            margin: 0 auto;
+        }
+
+        .box-left .volume .y {
+            width: 30%;
+            height: 1.5px;
+            display: block;
+            background-color: #ED553B;
+        }
+
+        .box-left .trumpet {
+            width: 350px;
+            height: 16px;
+            display: flex;
+            justify-content: space-between;
+            margin: 10px auto;
+        }
+
+        .box-left .trumpet li img {
+            height: 16px;
+
+        }
+
+        .box-left .trumpet li:hover {
+            filter: brightness(2.2);
+        }
+
+
+        .box-right {
+
+            width: 200px;
+            height: 380px;
+            /* float: right; */
+            /* display: none; */
+            padding-top: 8px;
+            margin-left: 500px;
+            box-sizing: border-box;
+            /* position: absolute;
+            top: 0;
+            left: 0; */
+        }
+
+
+        .box-right li {
+            width: 170px;
+            margin: 8px 8px;
+            font-size: 14px;
+            color: #DDDDDD;
+            display: flex;
+            justify-content: space-between;
+        }
+    </style>
+</head>
+
+<body>
+    <audio style=" position: fixed; top: 0; left: 0; z-index: 9" src="./2.mp3" controls></audio>
+
+    <div class="box">
+        <div class="box-left">
+            <div class="top">
+                <div class="pic"><img
+                        src="https://www.17sucai.com/preview/1117545/2018-03-22/%E9%9F%B3%E4%B9%90%E6%92%AD%E6%94%BE%E5%99%A8/img/qinaide.jpg"
+                        alt=""></div>
+                <div class="tex">
+                    <p class="name"> 其实</p>
+                    <p class="singer">薛之谦</p>
+                </div>
+                <div class="tb">
+                    <ul>
+                        <li><img src="./image/箭头 (1).png" alt=""></li>
+                        <li class="caidan"><img src="./image/菜单 (1).png" alt=""></li>
+                        <li><img src="./image/爱心 _实心 (1).png" alt=""></li>
+                    </ul>
+                </div>
+
+                <div class="progress">
+                    <input class="yinyue" type="range" min="0" max="100" step="0.1" />
+                    <span class="x"></span>
+                </div>
+            </div>
+            <div class="time">00:00</div>
+            <div class="playing">
+                <li><img src="./image/左双箭头.png" alt=""></li>
+                <li><img class="stop" src="./image/暂停.png" alt="">
+                    <img class="start" style="display: none;" src="./image/暂停 (2).png" alt="">
+                </li>
+                <li><img src="./image/右双箭头.png" alt=""></li>
+            </div>
+            <div class="volume">
+                <span class="y"></span>
+            </div>
+            <div class="trumpet">
+                <li class="off"><img class="offs" src="./image/004喇叭-2.png" alt=""></li>
+                <li class="open"><img class="opens" src="./image/喇叭.png" alt=""></li>
+            </div>
+        </div>
+
+
+
+
+        <div class="box-right">
+            <li><span class="nane">亲爱的</span><span class="tieml"></span>04:10</li>
+            <li><span class="nane">其实</span><span class="tieml">04:02</span></li>
+            <li><span class="nane">好想就这样</span><span class="tieml">04:19</span></li>
+            <li><span class="nane">一直</span><span class="tieml">03:51</span></li>
+        </div>
+
+    </div>
+
+
+
+    <script>
+        var input = document.querySelector(".yinyue");
+        var audio = document.querySelector("audio");
+
+        var boxRight = document.querySelector(".box-right");
+        var caidan = document.querySelector(".caidan");
+        var box = document.querySelector(".box");
+
+        // 隐藏显示菜单
+        caidan.onclick = function () {
+            if (boxRight.style.display == "none") {
+                boxRight.style.display = "block";
+                box.style.width = "700px";
+
+            } else {
+                boxRight.style.display = "none";
+                box.style.width = "500px";
+            }
+        };
+
+        // 暂停/开始
+        var stop = document.querySelector(".stop");
+        var start = document.querySelector(".start");
+        stop.onclick = function () {
+            audio.play();
+            this.style.display = "none";
+            start.style.display = "block";
+        };
+        start.onclick = function () {
+            audio.pause();
+            this.style.display = "none";
+            stop.style.display = "block";
+        };
+
+
+        var tuoing = false;
+
+        var time = document.querySelector(".time");
+
+        console.log(time.innerHTML);
+
+
+
+        input.oninput = function (event) {
+            console.log(event.target.value);
+
+            var v = event.target.value;
+
+            var x = document.querySelector(".x");
+            x.style.width = v + "%";
+            tuoing = true;
+
+
+        }
+
+        input.onchange = function (event) {
+            var v = event.target.value;
+            audio.currentTime = (v / 100) * audio.duration;
+            tuoing = false;
+        };
+
+        audio.ontimeupdate = function () {
+            if (!tuoing) {
+                var v = (audio.currentTime / audio.duration) * 100;
+
+                input.value = v;
+                document.querySelector(".x").style.width = v + "%";
+                time.innerHTML = input.value;
+
+            }
+        };
+
+
+        // 喇叭
+        var offs = document.querySelector(".offs");
+        var opens = document.querySelector(".opens");
+        var y =document.querySelector(".y");
+        offs.onclick = function(){
+            y.style.width = 0;
+
+        }
+        opens.onclick = function(){
+            y.style.width = 100+"%" ;
+        }
+
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>
