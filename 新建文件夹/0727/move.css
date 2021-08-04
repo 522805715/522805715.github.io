@@ -1,0 +1,46 @@
+body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  background-image: linear-gradient(to bottom, #c8e910 0%, rgb(56, 168, 233) 40%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+body .box {
+  width: 320px;
+  height: 500px;
+  position: relative;
+  transition: all 20ms;
+}
+body .box .bg {
+  background-image: url("https://www.17sucai.com/preview/1/2015-11-12/201509181601/img/effect-1/1.png");
+  background-size: 100%  auto;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-position: top center ;
+  height: 100%;
+  transition: inherit;
+}
+body .box img {
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 9;
+  transition: inherit;
+}
+body .box .shine {
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 9.1;
+  height: 100%;
+  background-image: linear-gradient(0deg, pink, transparent);
+}
+/*# sourceMappingURL=./move.css.map */
